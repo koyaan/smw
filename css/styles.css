@@ -1,0 +1,47 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #9aaa9a;
+}
+h1 {
+  font-size: 5em;
+}
+.carousel {
+  height: 100%;
+}
+.carousel .carousel-inner {
+  height: 100%;
+}
+.carousel .item {
+  text-align: center;
+  top: 30%;
+}
+.carousel .carousel-indicators {
+  bottom: 35%;
+  width: 50%;
+  margin-left: -25%;
+}
+.progress {
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+  opacity: 0.5;
+  height: 10%;
+}
+.progress .progress-bar {
+  width: 0%;
+}
+.start-button {
+  position: absolute;
+  bottom: 2%;
+  margin: 0 auto;
+  width: 20%;
+  left: 40%;
+  z-index: 15;
+  font-size: 150%;
+}
+.ready-message {
+  display: none;
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>8 Minute Workout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/styles.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+
+
+  <div class="progress">
+      <div class="progress-bar"></div>
+  </div>
+
+
+  <div id="carousel-example-generic" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="8"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="9"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="11"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="12"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="13"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="14"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="15"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="16"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="17"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="18"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="19"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="20"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="21"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="22"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="23"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="24"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="25"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+            <div class="item active">
+                <a href="#" class="btn btn-default start-button">Start</a>
+                <h1 class="ready-message">Get Ready</h1>
+            </div>
+
+            <div class="item">
+                <h1>Jumping jacks</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Wall sit</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Push-up</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Abdominal crunch</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Step-up onto chair</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Squat</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Triceps dip on chair</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Plank</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>High kness running in place</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Lunge</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Push-up and rotation</h1>
+            </div>
+            <div class="item">
+                <h1>pause</h1>
+            </div>
+
+            <div class="item">
+                <h1>Side plank</h1>
+            </div>
+            <div class="item">
+                <h1>Finished</h1>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+
+    <script>
+
+        var EXERCISETIME = 3;
+        var PAUSETIME = 1;
+
+        var workout;
+
+        workout = {
+            running: false,
+            frame: 0,
+            times: [3,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+                EXERCISETIME, PAUSETIME,
+            ]
+        };
+
+        workout.start =  function() {
+          if(!workout.running)  {
+              $('.start-button').hide();
+              $('.ready-message').show();
+              workout.next();
+              workout.running = true;
+          }
+        };
+
+        workout.next = function() {
+                if(workout.frame < workout.times.length)  {
+                    setTimeout(function() {
+                        console.log("next " + workout.frame);
+                        $('.progress-bar').css("-webkit-transition", "width 0s ease");
+                        $('.progress-bar').width("0%");
+                        $(".carousel").carousel(workout.frame);
+                        workout.next();
+                    }, workout.times[workout.frame]*1000);
+                    workout.progress();
+                }
+                workout.frame++;
+        };
+
+        workout.progress = function() {
+            console.log("progress" + workout.frame);
+            if(workout.frame %2 == 0)   {
+                $('.progress-bar').addClass('progress-bar-success');
+            } else {
+                $('.progress-bar').removeClass('progress-bar-success');
+            }
+            $('.progress-bar').css("-webkit-transition", "width 0s ease");
+            $('.progress-bar').width("0%");
+            $('.progress-bar').css("-webkit-transition", "width "+workout.times[workout.frame]+"s linear");
+            console.log("setting "+ "width "+workout.times[workout.frame]+"s linear");
+            $('.progress-bar').width("100%");
+        }
+
+        $(document).ready(function(){
+
+            $('.carousel').carousel();
+
+            $('.start-button').on('click', function(){
+               workout.start();
+            });
+
+        });
+    </script>
+  </body>
+</html>
